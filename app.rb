@@ -9,7 +9,7 @@ end
 
 get '/bookmarks' do
 @bookmarklist = Bookmarks.all
-  erb :bookmarks
+  erb :'bookmarks/index'
 end
 
   run! if app_file == $0
