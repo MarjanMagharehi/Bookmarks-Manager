@@ -1,8 +1,12 @@
+require 'pg'
+
 class Bookmarks
 
 
   def self.all
-    ["https://sqlzoo.net/wiki/SELECT_basics", "https://www.google.com/", "https://www.facebook.com", "https://www.asos.com"]
+    conn = PG.connect(dbname: 'bookmark_manager')
+    result = conn.exec("SELECT * FROM bookmarks")
+    result.map {|bookmark| bookmark['url']}
   end
 
 end
