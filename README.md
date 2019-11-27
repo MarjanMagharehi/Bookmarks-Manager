@@ -18,3 +18,8 @@ Created a new table within that database:
   `CREATE TABLE bookmarks (id SERIAL PRIMARY KEY, url VARCHAR(60))`
     - this is also documented in the migrations folder, within the database(db) folder.
 Used \dt to view the database in terminal to make sure the table had been made
+
+Changed the bookmarks.rb file to connect to the database in my computer - using pg. Here,
+we can update the database, while loading the webpage at the same time, and not having to kill the webpage and reload. (here we added http://twitter.com)
+
+I set up another database called bookmark_manager_test - aka the test database (to connect with the test files).
