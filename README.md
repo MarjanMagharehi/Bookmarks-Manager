@@ -23,3 +23,6 @@ Changed the bookmarks.rb file to connect to the database in my computer - using 
 we can update the database, while loading the webpage at the same time, and not having to kill the webpage and reload. (here we added http://twitter.com)
 
 I set up another database called bookmark_manager_test - aka the test database (to connect with the test files).
+
+As user, so that I may easily add bookmarks that I want
+I would like to have a button to add bookmarks 
