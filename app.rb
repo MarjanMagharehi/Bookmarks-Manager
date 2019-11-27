@@ -17,7 +17,10 @@ get '/bookmarks/new' do
 end
 
 post '/bookmarks' do
-  p "Form data submitted to the /bookmarks route!"
+  url = params['url']
+  connection = PG.connect(dbname: 'bookmark_manager_test')
+  connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')" )
+  redirect '/bookmarks'
   # p params
 end
 
