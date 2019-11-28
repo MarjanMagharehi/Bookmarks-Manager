@@ -4,6 +4,6 @@ feature 'Adding bookmarks' do
     fill_in('url', with: 'http://www.superdrug.com')
     fill_in('title', with: 'Superdrug')
     click_button('Add')
-    expect(page).to have_content 'http://www.superdrug.com'
+    expect(page).to have_content 'Superdrug: http://www.superdrug.com'
   end
 end
