@@ -10,9 +10,9 @@ describe Bookmarks do
   end
 
   it 'returns a list of bookmarks' do
-    Bookmarks.create(url: 'http://www.makersacademy.com')
-    Bookmarks.create(url: 'http://www.destroyallsoftware.com')
-    Bookmarks.create(url: 'http://www.google.com')
+    Bookmarks.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+    Bookmarks.create(url: 'http://www.destroyallsoftware.com', title: 'Destroy all Software')
+    Bookmarks.create(url: 'http://www.google.com', title: 'Google')
     bookmarks = Bookmarks.all
     # connection = PG.connect(dbname: 'bookmark_manager_test')
     # connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
@@ -28,7 +28,7 @@ end
 
 describe '.create' do
   it 'creates a new bookmark' do
-    Bookmarks.create(url: 'http://www.superdrug.com') # , title: 'Superdrug'
+    Bookmarks.create(url: 'http://www.superdrug.com', title: 'Superdrug')
     expect(Bookmarks.all).to include 'http://www.superdrug.com'
   end
 end
