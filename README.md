@@ -7,6 +7,9 @@ As a time-pressed user
 So that I can save a website
 I would like to add the site's address and title to bookmark manager
 
+As user, so that I may easily add bookmarks that I want
+I would like to have a button to add bookmarks
+
 Database setup instructions:
 `brew install postgresql`
 launched psql
@@ -24,5 +27,4 @@ we can update the database, while loading the webpage at the same time, and not 
 
 I set up another database called bookmark_manager_test - aka the test database (to connect with the test files).
 
-As user, so that I may easily add bookmarks that I want
-I would like to have a button to add bookmarks 
+Altered the table bookmarks in bookmark_manager and bookmark_manager_test to have a title column (as represented in the 02_add_title_to_bookmarks.sql, migration).
