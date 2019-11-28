@@ -1,1 +1,3 @@
-<%=  @bookmarklist %>
+<%  @bookmarklist.each do |bookmark|  %>
+  <%=  bookmark.title %>: <%= bookmark.url %>
+<% end %>

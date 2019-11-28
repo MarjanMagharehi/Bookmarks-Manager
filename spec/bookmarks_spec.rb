@@ -11,24 +11,28 @@ describe Bookmarks do
 
   it 'returns a list of bookmarks' do
     Bookmarks.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
-    Bookmarks.create(url: 'http://www.destroyallsoftware.com', title: 'Destroy all Software')
-    Bookmarks.create(url: 'http://www.google.com', title: 'Google')
+    # Bookmarks.create(url: 'http://www.destroyallsoftware.com', title: 'Destroy all Software')
+    # Bookmarks.create(url: 'http://www.google.com', title: 'Google')
     bookmarks = Bookmarks.all
+    new_bookmarks = bookmarks.last
+    expect(new_bookmarks.url).to eq('http://www.makersacademy.com')
     # connection = PG.connect(dbname: 'bookmark_manager_test')
     # connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
     # connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
     # connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
     # could be bookmarklist?
     # expect(Bookmarks.all).to include("http://google.com")
-    expect(bookmarks).to include('http://www.makersacademy.com')
-    expect(bookmarks).to include('http://www.destroyallsoftware.com')
-    expect(bookmarks).to include('http://www.google.com')
+    # expect(bookmarks).to include('http://www.makersacademy.com')
+    # expect(bookmarks).to include('http://www.destroyallsoftware.com')
+    # expect(bookmarks).to include('http://www.google.com')
   end
 end
 
 describe '.create' do
   it 'creates a new bookmark' do
     Bookmarks.create(url: 'http://www.superdrug.com', title: 'Superdrug')
-    expect(Bookmarks.all).to include 'http://www.superdrug.com'
+    bookmarks = Bookmarks.all
+    new_bookmarks = bookmarks.last
+    expect(new_bookmarks.url).to eq 'http://www.superdrug.com'
   end
 end
