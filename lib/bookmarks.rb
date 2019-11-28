@@ -12,4 +12,5 @@ class Bookmarks
     result.map {|bookmark| bookmark['url']}
   end
 
+
 end
