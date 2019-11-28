@@ -1,6 +1,14 @@
 require 'bookmarks'
 
 describe Bookmarks do
+  describe '#initialize' do
+    it 'stores a url' do
+      bookmarks = Bookmarks.new(:title, :url)
+      expect(bookmarks.title).to eq(:title)
+      expect(bookmarks.url).to eq(:url)
+    end
+  end
+
   it 'returns a list of bookmarks' do
     Bookmarks.create(url: 'http://www.makersacademy.com')
     Bookmarks.create(url: 'http://www.destroyallsoftware.com')
@@ -20,7 +28,7 @@ end
 
 describe '.create' do
   it 'creates a new bookmark' do
-    Bookmarks.create(url: 'http://www.superdrug.com')
+    Bookmarks.create(url: 'http://www.superdrug.com') # , title: 'Superdrug'
     expect(Bookmarks.all).to include 'http://www.superdrug.com'
   end
 end

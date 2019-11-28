@@ -1,6 +1,11 @@
 require 'pg'
 
 class Bookmarks
+  attr_reader :title, :url
+  def initialize(title, url)
+    @title = title
+    @url = url 
+  end
 
   def self.all
     if ENV['RACK_ENV'] == 'test'
